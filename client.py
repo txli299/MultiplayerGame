@@ -1,3 +1,4 @@
+#starter
 import pygame
 
 width,height = 500,500
