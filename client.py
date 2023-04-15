@@ -1,4 +1,3 @@
-#starter
 import pygame
 
 width,height = 500,500
@@ -15,7 +14,7 @@ class Player():
         self.height = height
         self.color = color
         self.rect = (x,y,width,height)
-        self.vel = 3
+        self.vel = 1
 
     def draw(self, win):
         pygame.draw.rect(win,self.color,self.rect)
@@ -28,9 +27,11 @@ class Player():
         if keys[pygame.K_RIGHT]:
             self.x+=self.vel
         if keys[pygame.K_UP]:
-            self.y += self.vel
-        if keys[pygame.K_DOWN]:
             self.y -= self.vel
+        if keys[pygame.K_DOWN]:
+            self.y += self.vel
+        
+        self.rect = (self.x, self.y,self.width,self.height)
 
 def redrawWindow(win, player):
     win.fill((255,255,255))
